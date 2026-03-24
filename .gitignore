@@ -1,0 +1,6 @@
+env1/
+__pycache__/
+*.pyc
+
+flan_t5_gender_inclusive/
+*.bin
