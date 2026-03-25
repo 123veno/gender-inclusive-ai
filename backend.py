@@ -13,10 +13,10 @@ app.add_middleware(
 
 
 MODEL_DIR = "google/flan-t5-small"
-
+print("⏳ Loading model...")
 model = T5ForConditionalGeneration.from_pretrained(MODEL_DIR)
 tokenizer = AutoTokenizer.from_pretrained(MODEL_DIR)
-
+print("✅ Model loaded successfully")
 
 class Request(BaseModel):
     text: str
@@ -41,6 +41,10 @@ Answer:"""
 @app.get("/")
 def home():
     return {"message": "Gender Inclusive Rewriter API is running"}
+
+@app.get("/")
+def home():
+    return {"message": "Backend running"}
 @app.post("/rewrite")
 def rewrite_api(req: Request):
     result = rewrite(req.text)
