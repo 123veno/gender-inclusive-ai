@@ -11,7 +11,8 @@ app.add_middleware(
     allow_headers=["*"],   # 🔥 IMPORTANT
 )
 
-MODEL_DIR = "./flan_t5_gender_inclusive"
+
+MODEL_DIR = "google/flan-t5-small"
 
 model = T5ForConditionalGeneration.from_pretrained(MODEL_DIR)
 tokenizer = AutoTokenizer.from_pretrained(MODEL_DIR)
